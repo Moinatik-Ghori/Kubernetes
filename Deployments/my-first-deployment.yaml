@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-first-deployment
+  labels:
+    env: Dev
+    app: Back-End-Apps
+spec:
+  selector:
+    matchLabels:
+      app: Back-End-Apps
+      env: Dev
+  replicas: 4
+  template:
+    metadata:
+      name: my-deployment-pod
+      labels:
+        env: Dev
+        app: Back-End-Apps
+    spec:
+      containers:
+      - name: my-first-deployment-container
+        image: nginx
+
+      
