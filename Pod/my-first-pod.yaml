@@ -3,9 +3,11 @@ kind: Pod
 metadata:
   name: my-first-pod
   labels: 
-    app: Front-End-Application
-    env: Prod
+    name: my-first-pod
+    app: demo-app
 spec:
   containers:
     - name: my-first-container
       image: nginx
+      ports:
+        - containerPort: 80
